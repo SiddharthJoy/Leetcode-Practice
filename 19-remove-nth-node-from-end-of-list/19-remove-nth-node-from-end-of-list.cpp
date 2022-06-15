@@ -10,24 +10,27 @@
  */
 class Solution {
     ListNode* here;
-    int cnt = 0,k;
+    
+    int k;
+    
     void remove(ListNode* node,ListNode* prev){
         if(node -> next == NULL){
-            cnt++;
+            k--;
             return;
         }
+       
         remove(node->next,node);
-        cnt++;
-        if(cnt == k+1){
-            node -> next = node -> next -> next;
-            k = 0;
-        } 
+        k--;
+        
+        if(k == -1) node -> next = node -> next -> next;
     }
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         k = n;
         remove(head,NULL);
-        if(k != 0) head = head -> next;
+        
+        if(k > -1) head = head -> next;
+        
         return head;
     }
     
