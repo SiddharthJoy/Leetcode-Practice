@@ -9,28 +9,23 @@
  * };
  */
 class Solution {
-    ListNode* here;
-    
     int k;
-    
-    void remove(ListNode* node,ListNode* prev){
+    void remove(ListNode* node){
         if(node -> next == NULL){
             k--;
             return;
         }
        
-        remove(node->next,node);
+        remove(node->next);
         k--;
-        
         if(k == -1) node -> next = node -> next -> next;
     }
+    
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         k = n;
-        remove(head,NULL);
-        
+        remove(head);
         if(k > -1) head = head -> next;
-        
         return head;
     }
     
