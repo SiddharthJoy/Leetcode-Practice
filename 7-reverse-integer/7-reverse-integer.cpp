@@ -20,7 +20,7 @@ public:
             ten /= 10;
         }
         
-        if(ans > pow(2,31+.0)-1 || ans < -pow(2,31+.0)) ans = 0;
+        if(ans >= 2147483648 || ans < -2147483648) ans = 0;
         
         return ans;
     }
