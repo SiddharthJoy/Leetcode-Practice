@@ -12,7 +12,10 @@ public:
             dfs(graph,u,path);
         }
         
-        if(node == N-1) paths.push_back(path);
+        if(node == N-1){
+            paths.push_back(path);
+            return;
+        }
     }
     
     vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
