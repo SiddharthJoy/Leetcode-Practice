@@ -1,10 +1,7 @@
 class Solution {
+    int row[201],col[201];
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-        int row[201],col[201];
-        
-        memset(row,0,sizeof row);
-        memset(col,0,sizeof col);
         
         for(int i = 0;i<matrix.size();i++){
             for(int j = 0;j < matrix[i].size();j++){
