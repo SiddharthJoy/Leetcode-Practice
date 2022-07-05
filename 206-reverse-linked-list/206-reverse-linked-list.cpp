@@ -12,20 +12,16 @@ class Solution {
 public:
     ListNode *HEAD;
     
-    void reverse(ListNode* ptr,ListNode* prev){
-        if(ptr -> next == NULL){
-            ptr-> next = prev;
-            HEAD = ptr;
-            return ;
-        }
-         
-        reverse(ptr->next,ptr);
-        ptr -> next = prev;
-    } 
+    void solve(ListNode *node,ListNode *prev){
+        if(node == NULL) return;
+        solve(node -> next,node);
+        if(HEAD == NULL) HEAD = node;
+        node -> next = prev;
+    }
+
     
     ListNode* reverseList(ListNode* head) {
-        if(head == NULL) return NULL;
-        reverse(head,NULL);
-        return HEAD;
+        solve(head,NULL);
+		return HEAD;
     }
 };
