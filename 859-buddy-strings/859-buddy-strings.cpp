@@ -5,8 +5,6 @@ public:
         int n = s.size();
         int nn = goal.size();
         
-        bool duplicate = false;
-        
         if(n != nn) return false;
         
         if(s == goal){
