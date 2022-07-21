@@ -21,9 +21,7 @@ public:
         
         int sum = node -> val + (lft + rgt);
         
-        mp[sum]++;
-        
-        if(mx < mp[sum]) mx = mp[sum];
+        mx = max(mx,++mp[sum]);
         
         return sum;
     }
