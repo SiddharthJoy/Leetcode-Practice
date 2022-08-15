@@ -1,16 +1,11 @@
 class Solution {
 public:
+    int a[30 + 2][30 + 2];
     vector<vector<int>> generate(int numRows) {
-        int a[numRows + 2][numRows + 2];
+        
         vector<vector<int>> ans;
         vector<int> v;
-        
-        for(int i = 0;i<=numRows;i++){
-            for(int j = 0;j <= numRows; j++){
-                a[i][j] = 0;
-            }
-        }
-        
+       
         a[1][0] = a[1][2] = 0;
         a[1][1] = 1;
         v.push_back(1);
