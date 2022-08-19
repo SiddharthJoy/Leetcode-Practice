@@ -6,10 +6,11 @@ public:
          int l,r;
          l = intervals[0][0];
          r = intervals[0][1];
+         int n = intervals.size();
         
          vector<vector<int>> ans;
         
-         for(int i = 1;i<intervals.size();i++){
+         for(int i = 1;i < n;i++){
              int x = intervals[i][0];
              int y = intervals[i][1];
              
